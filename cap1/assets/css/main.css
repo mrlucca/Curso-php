@@ -1,0 +1,163 @@
+* {
+    /* o (*) é para definir todas as tags */
+    font-family: sans-serif, 'Owald';
+}
+
+body {
+    height: 100vh;
+    margin: 0px;
+
+    /*Declaração do tipo de formatação grid, flex, inline*/
+    /*esse exemplo do grid define linhas na tela onde vai ser trabalhada a formatação*/
+    display: grid;
+
+    /*Definição da quantidade de linhas e a definição de como elas serão apresentadas na tela
+                       l1   l2   l3  -> essa é adefinição da apresentação da quantidade de linhas na tela*/     
+    grid-template-rows: 90px 1fr 60px;/*o px define um tamanho fixo, o fr é um fragmento*/
+    /*dessa forma o fr irá ocupar todo o resto que sobrar da tela*/
+    grid-template-columns: 1fr;
+    /*Definição das áreas por linha*/
+    grid-template-areas: 
+    "cabecalho" /*O cabeçalho vai ocupar a primeira linha*/ /* como só tem uma coluna ele é colocado dessa forma*/
+    "principal" /*O principal vai ocupar a segunda linha*/
+    "rodape" ; /*O rodape vai ocupar a terceira linha*/
+
+
+}
+
+.cabecalho h1, h2{
+    margin: 1%;
+    font-family: 'Metal Mania', cursive;
+    font-size: 40px;
+    font-weight: 100;
+    padding-top: 1px;
+}
+.cabecalho{
+    grid-area: cabecalho; /*pegando o local de armazenamento do cabecalho*/
+    background-color: #4A148C;
+    color: white;
+    /*O (display flex) por padão coloca tudo em só uma linha, chamada de flex direction*/
+    /*Mas pode mudar a forma de visualização do flex-direction... como column*/
+    display: flex;
+    flex-direction: row; /*MUDANDO A DIREÇÃO DOS COMPONENTS*/
+    justify-content: space-between; /*MANIPULANDO A APRESENTAÇÃO DOS COMPONENTES NA TELA*/
+    z-index: 1; /*Coloca o cabeçalho a cima dos outros recursos*/
+
+    /*Box shadow*/
+    box-shadow: 0px 6px 14px 1px rgba(7,5,43,1);
+
+}
+
+.principal{
+    grid-area: principal;
+    /*uma forma de obter precisão e um não entrar no outro*/
+    height: calc(100vh - 180px);
+    background-color: #f0f0f0f0;
+    padding: 20px;
+}
+
+.conteudo{
+    position: relative;
+    height: 100%;
+    overflow-y: scroll; /*Serve para se ficar maior que o tamanho permitido ele coloca um scroll do lado*/
+
+    /*mas tem como tornar a pag mais dinamica tirando a limitação de autura do principal:height: calc(100vh - 180px);
+    e deixando gerar automaticamente.
+    Mas pra isso acontecer tem que meixer no rodape colocando ele com position: sticky; e bottom: 0px;
+
+        */
+    background-color: #fff;
+    padding: 1px;
+
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+
+}
+.rodape{
+    grid-area: rodape;
+    background-color: gray;
+    position: static;
+    bottom: 0px;
+    display: flex;
+    /* O justify-contente meixe em um eixo e o align-itens em outro 
+        o align depende muito da direção fornecida do jusytify-content
+
+    */
+    justify-content: flex-end;
+    align-items: center;
+    
+
+}
+
+.rodape p{
+    font-weight: 500;
+    font-size: 1.7rem;
+    padding: 2px    ;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+
+.modulos{
+    display: flex;
+    /*  O display flex ira colocar tudo na msm linha para mudar isso é necessário
+    colocar um comando pra ele permitir dá a quebra de linha
+    */
+
+    flex-wrap: wrap; /* permite quebrar as linhas*/
+    justify-content: space-around;
+}
+
+.modulo{
+    /*Definindo a largura dos elementos*/
+    flex-basis: 32%;
+    margin-bottom: 10px;
+
+}
+
+.modulo h3{
+    font-family: 'Staatliches', cursive;
+    font-weight: 400;
+    font-size: 25px;
+    color: white;
+    padding: 10px 30px;
+    background-color: purple;
+    text-align: center;
+    border-radius: 10px 36px;
+}
+
+.modulo > ul{
+    margin: 0px;
+    padding: 10px;
+    list-style: none;
+}
+
+.modulo > ul > li {
+    padding: 10px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: 300ms;
+
+}
+
+.modulo > ul > li > a{
+    text-decoration: none;
+    display: flex;
+    color: #222;
+    justify-content: center;
+    font-family: 'Staatliches', cursive;
+}
+
+
+.modulo > ul > li:hover{
+    background-color: #b3acac;
+    border-radius: 10px;
+
+}
+
+.modulo.verde > h3{background-color:#4CAF50}
+.modulo.purple > h3{background-color:purple;}
+.modulo.azul > h3{background-color:blue;}
+.modulo.rosa > h3{background-color:#ff61ff;}
+.modulo.cinza > h3{background-color:#55A8;}
+.modulo.vermelho > h3{background-color:red;}
+.modulo.crimson > h3{background-color:crimson;}
+.modulo.amarelo > h3{background-color:#ffc800;}
