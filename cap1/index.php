@@ -44,6 +44,24 @@
     					</ul>
     				
     			</div>
+
+                <div class="modulo verde">
+                    <h3>15. BD</h3>
+                    <ul>
+                        <li><a href="exercicio.php?dir=db&file=conexao">Conexao na db</a></li>
+                        <li><a href="exercicio.php?dir=db&file=consultar">Consulta na db</a></li>
+                        <li><a href="exercicio.php?dir=db&file=criarBanco">Criar Banco</a></li>
+                        <li><a href="exercicio.php?dir=db&file=criarTabela">Criar Tabela</a></li>
+                        <li><a href="exercicio.php?dir=db&file=excluir1">Excluir 1</a></li>
+                        <li><a href="exercicio.php?dir=db&file=excluir12">Excluir 2</a></li>
+                        <li><a href="exercicio.php?dir=db&file=inserir1">Inserir 1</a></li>
+                        <li><a href="exercicio.php?dir=db&file=inserir2">Inserir 2</a></li>
+
+
+
+                    </ul>
+
+                </div>
     			
     </main>
 
